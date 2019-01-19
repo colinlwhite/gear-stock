@@ -1,0 +1,48 @@
+{
+  "gear": {
+    "gear1": {
+      "name": "Pearl Masterworks",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Drums & Percussion",
+      "uid": "1234"
+    },
+    "gear2": {
+      "name": "Pearl Masterworks",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Drums & Percussion",
+      "uid": "1234"
+    },
+    "gear3": {
+      "name": "Pearl Masterworks",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Drums & Percussion",
+      "uid": "1234"
+    },
+    "gear4": {
+      "name": "Pearl Masterworks",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Drums & Percussion",
+      "uid": "1234"
+    }
+  }
+}
