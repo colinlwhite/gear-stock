@@ -19,7 +19,7 @@ class App extends Component {
      if (user) {
        this.setState({
          authed: true,
-       })
+       });
      } else {
        this.setState({
          authed: false,
@@ -43,20 +43,20 @@ class App extends Component {
    };
 
    if (!this.state.authed) {
-    return (
+     return (
       <div className="App">
       <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
      <Auth isAuthenticated={this.isAuthenticated}/>
       </div>
-    );
-  }
+     );
+   }
 
-    return (
+   return (
       <div className="App">
        <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
       </div>
-    );
-  }
+   );
+ }
 }
 
 export default App;
