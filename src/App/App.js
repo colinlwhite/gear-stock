@@ -10,6 +10,7 @@ import gearRequest from '../helpers/data/gearRequest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+
 class App extends Component {
  state = {
    authed: false,
@@ -18,17 +19,17 @@ class App extends Component {
 
  componentDidMount() {
    connection();
-   const uid = authRequests.getCurrentUid();
-   gearRequest.getRequest(uid).then((gear) => {
-     this.setState({ gear });
-   })
-     .catch(err => console.error('error with getting the gear', err));
 
    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
      if (user) {
        this.setState({
          authed: true,
        });
+       const uid = authRequests.getCurrentUid();
+       gearRequest.getRequest(uid).then((gear) => {
+         this.setState({ gear });
+       })
+         .catch(err => console.error('error with getting the gear', err));
      } else {
        this.setState({
          authed: false,
