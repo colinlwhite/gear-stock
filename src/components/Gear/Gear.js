@@ -3,11 +3,12 @@ import GearItem from '../GearItem/GearItem';
 
 class Gear extends React.Component {
   render() {
-    const { gear } = this.props;
+    const { gear, deleteSingleGear } = this.props;
     const gearItemComponents = gear.map(gearstock => (
       <GearItem
       gearstock={gearstock}
       key={gearstock.id}
+      deleteSingleGear={deleteSingleGear}
       />
     ));
     return (

@@ -18,4 +18,9 @@ const getRequest = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getRequest };
+const deleteGear = gearId => axios.delete(`${firebaseUrl}/gear/${gearId}.json`);
+
+export default {
+  getRequest,
+  deleteGear,
+};
