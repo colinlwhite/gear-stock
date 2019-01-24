@@ -46,6 +46,18 @@ class App extends Component {
    this.setState({ authed: true });
  }
 
+ deleteOneGear = (gearId) => {
+   gearRequest.deleteGear(gearId)
+     .then(() => {
+       const uid = authRequests.getCurrentUid();
+       gearRequest.getRequest(uid)
+         .then((gear) => {
+           this.setState({ gear });
+         });
+     })
+     .catch(err => console.error('error in deleting', err));
+ }
+
  render() {
    const logoutClickEvent = () => {
      authRequests.logoutUser();
@@ -64,7 +76,7 @@ class App extends Component {
    return (
       <div className="App">
        <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-       <Gear gear={this.state.gear}/>
+       <Gear gear={this.state.gear} deleteSingleGear={this.deleteOneGear}/>
       </div>
    );
  }
