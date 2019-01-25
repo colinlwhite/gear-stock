@@ -20,7 +20,10 @@ const getRequest = uid => new Promise((resolve, reject) => {
 
 const deleteGear = gearId => axios.delete(`${firebaseUrl}/gear/${gearId}.json`);
 
+const postGear = gear => axios.post(`${firebaseUrl}/gear.json`, gear);
+
 export default {
   getRequest,
   deleteGear,
+  postGear,
 };

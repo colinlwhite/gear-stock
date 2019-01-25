@@ -6,6 +6,7 @@ import Auth from '../components/Auth/Auth';
 import authRequests from '../helpers/data/authRequests';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Gear from '../components/Gear/Gear';
+import GearForm from '../components/GearForm/GearForm';
 import gearRequest from '../helpers/data/gearRequest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -58,6 +59,18 @@ class App extends Component {
      .catch(err => console.error('error in deleting', err));
  }
 
+ formSubmitGear = (newGear) => {
+   gearRequest.postGear(newGear)
+     .then(() => {
+       const uid = authRequests.getCurrentUid();
+       gearRequest.getRequest(uid)
+         .then((gear) => {
+           this.setState({ gear });
+         });
+     })
+     .catch(err => console.error('error in creating new gear', err));
+ }
+
  render() {
    const logoutClickEvent = () => {
      authRequests.logoutUser();
@@ -77,6 +90,7 @@ class App extends Component {
       <div className="App">
        <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
        <Gear gear={this.state.gear} deleteSingleGear={this.deleteOneGear}/>
+       <GearForm onSubmit={this.formSubmitGear}/>
       </div>
    );
  }
