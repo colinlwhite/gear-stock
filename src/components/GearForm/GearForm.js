@@ -1,5 +1,6 @@
 import React from 'react';
 import authRequests from '../../helpers/data/authRequests';
+import gearRequest from '../../helpers/data/gearRequest';
 
 const defaultGear = {
   name: '',
@@ -36,11 +37,30 @@ class GearForm extends React.Component {
     this.setState({ newGear: defaultGear });
   }
 
+  componentDidUpdate(prevProps) {
+    const { isEditing, editId } = this.props;
+    if (prevProps !== this.props && isEditing) {
+      gearRequest.getSingleGear(editId)
+        .then((gear) => {
+          this.setState({ newGear: gear.data });
+        })
+        .catch(err => console.error('error with getSingleListing', err));
+    }
+  }
+
   render() {
     const { newGear } = this.state;
+    const { isEditing } = this.props;
+    const title = () => {
+      if (isEditing) {
+        return <h1>Edit Gear</h1>;
+      }
+      return <h1>Add New Gear</h1>;
+    };
+
     return (
       <div className="listing-form col">
-      <h2>Add New Listing:</h2>
+      {title()}
       <form onSubmit={this.formSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>

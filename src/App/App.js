@@ -16,6 +16,8 @@ class App extends Component {
  state = {
    authed: false,
    gear: [],
+   isEditing: false,
+   editId: '-1',
  }
 
  componentDidMount() {
@@ -60,27 +62,48 @@ class App extends Component {
  }
 
  formSubmitGear = (newGear) => {
-   gearRequest.postGear(newGear)
-     .then(() => {
-       const uid = authRequests.getCurrentUid();
-       gearRequest.getRequest(uid)
-         .then((gear) => {
-           this.setState({ gear });
-         });
-     })
-     .catch(err => console.error('error in creating new gear', err));
+   const { isEditing, editId } = this.state;
+   if (isEditing) {
+     gearRequest.putGear(editId, newGear)
+       .then(() => {
+         const uid = authRequests.getCurrentUid();
+         gearRequest.getRequest(uid)
+           .then((gear) => {
+             this.setState({ gear, isEditing: false, editId: '-1' });
+           });
+       })
+       .catch(err => console.error('error with gear post', err));
+   } else {
+     gearRequest.postGear(newGear)
+       .then(() => {
+         const uid = authRequests.getCurrentUid();
+         gearRequest.getRequest(uid)
+           .then((gear) => {
+             this.setState({ gear });
+           });
+       })
+       .catch(err => console.error('error in creating new gear', err));
+   }
  }
 
+ passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
+
  render() {
+   const {
+     authed,
+     gear,
+     isEditing,
+     editId,
+   } = this.state;
    const logoutClickEvent = () => {
      authRequests.logoutUser();
      this.setState({ authed: false });
    };
 
-   if (!this.state.authed) {
+   if (!authed) {
      return (
       <div className="App">
-      <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
+      <MyNavbar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
      <Auth isAuthenticated={this.isAuthenticated}/>
       </div>
      );
@@ -88,9 +111,13 @@ class App extends Component {
 
    return (
       <div className="App">
-       <MyNavbar isAuthed={this.state.authed} logoutClickEvent={logoutClickEvent} />
-       <Gear gear={this.state.gear} deleteSingleGear={this.deleteOneGear}/>
-       <GearForm onSubmit={this.formSubmitGear}/>
+       <MyNavbar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
+       <Gear
+       gear={gear}
+       deleteSingleGear={this.deleteOneGear}
+       passGearToEdit={this.passGearToEdit}
+       />
+       <GearForm onSubmit={this.formSubmitGear} isEditing={isEditing} editId={editId}/>
       </div>
    );
  }
