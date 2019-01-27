@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink } from 'reactstrap';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 
@@ -19,6 +21,31 @@ class GearForm extends React.Component {
     newGear: defaultGear,
   }
 
+  formSubmitGear = (newGear) => {
+    const { isEditing, editId } = this.state;
+    if (isEditing) {
+      gearRequest.putGear(editId, newGear)
+        .then(() => {
+          const uid = authRequests.getCurrentUid();
+          gearRequest.getRequest(uid)
+            .then((gear) => {
+              this.setState({ gear, isEditing: false, editId: '-1' });
+            });
+        })
+        .catch(err => console.error('error with gear post', err));
+    } else {
+      gearRequest.postGear(newGear)
+        .then(() => {
+          const uid = authRequests.getCurrentUid();
+          gearRequest.getRequest(uid)
+            .then((gear) => {
+              this.setState({ gear });
+            });
+        })
+        .catch(err => console.error('error in creating new gear', err));
+    }
+  }
+
   formFieldStringState = (name, e) => {
     e.preventDefault();
     const tempGear = { ...this.state.newGear };
@@ -30,10 +57,10 @@ class GearForm extends React.Component {
 
   formSubmit = (e) => {
     e.preventDefault();
-    const { onSubmit } = this.props;
+    // const { onSubmit } = this.props;
     const myGear = { ...this.state.newGear };
     myGear.uid = authRequests.getCurrentUid();
-    onSubmit(myGear);
+    this.formSubmitGear(myGear);
     this.setState({ newGear: defaultGear });
   }
 
@@ -61,7 +88,7 @@ class GearForm extends React.Component {
     return (
       <div className="listing-form col">
       {title()}
-      <form onSubmit={this.formSubmit}>
+      <form onSubmit={this.formSubmit} to='/home'>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
