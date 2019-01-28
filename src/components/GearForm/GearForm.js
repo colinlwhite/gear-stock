@@ -19,20 +19,8 @@ const defaultGear = {
 class GearForm extends React.Component {
   state = {
     newGear: defaultGear,
-    gear: [],
+    // gear: [],
   }
-
-  // Test
-
-  componentDidMount() {
-    const uid = authRequests.getCurrentUid();
-    gearRequest.getRequest(uid).then((gear) => {
-      this.setState({ gear });
-    })
-      .catch(err => console.error('error with getting the gear', err));
-  }
-
-  // #endregion
 
   formSubmitGear = (newGear) => {
     const { isEditing, editId } = this.state;
@@ -75,6 +63,7 @@ class GearForm extends React.Component {
     myGear.uid = authRequests.getCurrentUid();
     this.formSubmitGear(myGear);
     this.setState({ newGear: defaultGear });
+    this.props.history.push('/home');
   }
 
   componentDidUpdate(prevProps) {
