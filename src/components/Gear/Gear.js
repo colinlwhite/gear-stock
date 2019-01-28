@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink as RRNavLink } from 'react-router-dom';
 import { NavLink } from 'reactstrap';
+
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 import GearItem from '../GearItem/GearItem';
+// import GearForm from '../GearForm/GearForm';
 
 class Gear extends React.Component {
   state = {
@@ -67,7 +69,7 @@ class Gear extends React.Component {
     ));
     return (
       <div>
-         <NavLink tag={RRNavLink} to='/add'><button className="btn btn-success">ADD Gear</button></NavLink>
+        <NavLink tag={RRNavLink} to='/add'><button className="btn btn-success">ADD Gear</button></NavLink>
         <h1>Your Gear</h1>
         <ul>{gearItemComponents}</ul>
       </div>
