@@ -19,7 +19,7 @@ const defaultGear = {
 class GearForm extends React.Component {
   state = {
     newGear: defaultGear,
-    // gear: [],
+    gear: [],
   }
 
   formSubmitGear = (newGear) => {
@@ -62,7 +62,10 @@ class GearForm extends React.Component {
     const myGear = { ...this.state.newGear };
     myGear.uid = authRequests.getCurrentUid();
     this.formSubmitGear(myGear);
-    this.setState({ newGear: defaultGear });
+    const uid = authRequests.getCurrentUid();
+    gearRequest.getRequest(uid).then((pleasework) => {
+      this.setState({ newGear: defaultGear, gear: pleasework });
+    });
     this.props.history.push('/home');
   }
 
