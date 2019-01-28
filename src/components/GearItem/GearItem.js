@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 class GearItem extends React.Component {
   deleteEvent = (e) => {
@@ -19,7 +20,7 @@ class GearItem extends React.Component {
       <div>
         <h2>{gearstock.name}</h2>
         <span><button className="btn btn-danger" onClick={this.deleteEvent}>DELETE</button></span>
-        <span><button className="btn btn-primary" onClick={this.editEvent}>EDIT</button></span>
+        <span><Button className="btn btn-primary" onClick={this.editEvent}>EDIT</Button></span>
       </div>
     );
   }

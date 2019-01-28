@@ -102,7 +102,7 @@ class App extends React.Component {
  //    }
  //  }
 
- passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
+ // passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
 
  render() {
    const {
@@ -126,7 +126,8 @@ class App extends React.Component {
                 <Switch>
                     <PrivateRoute path='/' exact component={Gear} authed={authed} />
                     <PrivateRoute path='/home' component={Gear} authed={authed} />
-                    <PrivateRoute path="/add" authed={authed} component={GearForm} />
+                    <PrivateRoute path='/add' authed={authed} component={GearForm} />
+                    <PrivateRoute path='/edit/:id' authed={authed} component={GearForm} />
                     <PublicRoute path='/auth' component={Auth} authed={authed} />
                 </Switch>
               </div>

@@ -57,24 +57,26 @@ class Gear extends React.Component {
   //   }
   // }
 
-  render() {
-    const { gear } = this.state;
-    const gearItemComponents = gear.map(gearstock => (
+ passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
+
+ render() {
+   const { gear } = this.state;
+   const gearItemComponents = gear.map(gearstock => (
       <GearItem
       gearstock={gearstock}
       key={gearstock.id}
       deleteSingleGear={this.deleteOneGear}
       passGearToEdit={this.passGearToEdit}
       />
-    ));
-    return (
+   ));
+   return (
       <div>
         <NavLink tag={RRNavLink} to='/add'><button className="btn btn-success">ADD Gear</button></NavLink>
         <h1>Your Gear</h1>
         <ul>{gearItemComponents}</ul>
       </div>
-    );
-  }
+   );
+ }
 }
 
 export default Gear;
