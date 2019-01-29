@@ -10,6 +10,8 @@ import GearItem from '../GearItem/GearItem';
 class Gear extends React.Component {
   state = {
     gear: [],
+    isEditing: false,
+    editId: '-1',
   }
 
   componentDidMount() {
@@ -57,26 +59,26 @@ class Gear extends React.Component {
   //   }
   // }
 
- passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
+  passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
 
- render() {
-   const { gear } = this.state;
-   const gearItemComponents = gear.map(gearstock => (
+  render() {
+    const { gear } = this.state;
+    const gearItemComponents = gear.map(gearstock => (
       <GearItem
       gearstock={gearstock}
       key={gearstock.id}
       deleteSingleGear={this.deleteOneGear}
       passGearToEdit={this.passGearToEdit}
       />
-   ));
-   return (
+    ));
+    return (
       <div>
         <NavLink tag={RRNavLink} to='/add'><button className="btn btn-success">ADD Gear</button></NavLink>
         <h1>Your Gear</h1>
         <ul>{gearItemComponents}</ul>
       </div>
-   );
- }
+    );
+  }
 }
 
 export default Gear;

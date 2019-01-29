@@ -32,8 +32,8 @@ class App extends React.Component {
  state = {
    authed: false,
    // gear: [],
-   isEditing: false,
-   editId: '-1',
+   // isEditing: false,
+   // editId: '-1',
  }
 
  componentDidMount() {
@@ -108,8 +108,8 @@ class App extends React.Component {
    const {
      authed,
      // gear,
-     isEditing,
-     editId,
+     // isEditing,
+     // editId,
    } = this.state;
 
    const logoutClickEvent = () => {

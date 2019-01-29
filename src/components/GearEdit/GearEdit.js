@@ -1,5 +1,4 @@
 import React from 'react';
-import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 
 const defaultGear = {
@@ -14,38 +13,17 @@ const defaultGear = {
   uid: '',
 };
 
-class GearForm extends React.Component {
+class GearEdit extends React.Component {
   state = {
-    newGear: defaultGear,
-    // gear: [],
-    // isEditing: false,
-    // editId: '-1',
+    editingGear: defaultGear,
   }
 
-  formSubmitGear = (newGear) => {
-    const { isEditing, editId } = this.props;
-    if (isEditing) {
-      gearRequest.putGear(editId, newGear)
-        .then(() => {
-          // const uid = authRequests.getCurrentUid();
-          // // gearRequest.getRequest(uid)
-          // //   .then((gear) => {
-          this.setState({ isEditing: false, editId: '-1' });
-          this.props.history.push('/home');
-          // });
-        });
-      // .catch(err => console.error('error with gear post', err));
-    } else {
-      gearRequest.postGear(newGear)
-        .then(() => {
-          // const uid = authRequests.getCurrentUid();
-          // gearRequest.getRequest(uid)
-          //   .then((gear) => {
-          // this.setState({ gear });
-          this.props.history.push('/home');
-        });
-      // .catch(err => console.error('error in creating new gear', err));
-    }
+  formSubmitGearEdit = (editedGear) => {
+    gearRequest.putGear(editId, newGear)
+    .then(() => {
+      this.setState({ })
+      this.props.history.push('/home');
+    })
   }
 
   formFieldStringState = (name, e) => {
@@ -109,12 +87,11 @@ class GearForm extends React.Component {
             onChange={this.nameChange}
           />
         </div>
-        <button className="btn btn-danger">Save Gear</button>
+        <button className="btn btn-danger">Update Gear</button>
       </form>
     </div>
     );
   }
 }
 
-
-export default GearForm;
+export default GearEdit;
