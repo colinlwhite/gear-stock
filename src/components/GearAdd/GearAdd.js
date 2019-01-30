@@ -1,15 +1,26 @@
 import React from 'react';
-import gearRequest from '../../helpers/data/gearRequest';
 import authRequests from '../../helpers/data/authRequests';
+import gearRequest from '../../helpers/data/gearRequest';
 
-class GearEdit extends React.Component {
+const defaultGear = {
+  name: '',
+  img: '',
+  price: 0,
+  condition: '',
+  brand: '',
+  year: '',
+  model: '',
+  category: '',
+  uid: '',
+};
+
+class GearForm extends React.Component {
   state = {
-    newGear: '',
+    newGear: defaultGear,
   }
 
-  formSubmitGearEdit = (newGear) => {
-    const editId = this.props.match.params.id;
-    gearRequest.putGear(editId, newGear)
+  formSubmitGear = (newGear) => {
+    gearRequest.postGear(newGear)
       .then(() => {
         this.props.history.push('/home');
       });
@@ -28,23 +39,14 @@ class GearEdit extends React.Component {
     e.preventDefault();
     const myGear = { ...this.state.newGear };
     myGear.uid = authRequests.getCurrentUid();
-    this.formSubmitGearEdit(myGear);
-  }
-
-  componentDidMount() {
-    const editId = this.props.match.params.id;
-    gearRequest.getSingleGear(editId)
-      .then((gear) => {
-        this.setState({ newGear: gear.data });
-      })
-      .catch(err => console.error('error with getSingleListing', err));
+    this.formSubmitGear(myGear);
   }
 
   render() {
     const { newGear } = this.state;
     return (
       <div className="listing-form col">
-      <h1>Edit Gear</h1>
+      <h1>Add New Gear</h1>
       <form onSubmit={this.formSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -52,13 +54,13 @@ class GearEdit extends React.Component {
             type="text"
             className="form-control"
             id="name"
-            aria-describedby="addressHelp"
+            aria-describedby="gearName"
             placeholder="Gear Item"
             value={newGear.name}
             onChange={this.nameChange}
           />
         </div>
-        <button className="btn btn-danger">Update Gear</button>
+        <button className="btn btn-danger">Add Gear</button>
       </form>
     </div>
     );
@@ -66,4 +68,4 @@ class GearEdit extends React.Component {
 }
 
 
-export default GearEdit;
+export default GearForm;

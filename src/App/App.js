@@ -9,9 +9,8 @@ import Auth from '../components/pages/Auth/Auth';
 import authRequests from '../helpers/data/authRequests';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Gear from '../components/Gear/Gear';
-import GearForm from '../components/GearForm/GearForm';
+import GearAdd from '../components/GearAdd/GearAdd';
 import GearEdit from '../components/GearEdit/GearEdit';
-// import gearRequest from '../helpers/data/gearRequest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -32,9 +31,6 @@ const PrivateRoute = ({ component: Component, authed, ...rest }) => {
 class App extends React.Component {
  state = {
    authed: false,
-   // gear: [],
-   // isEditing: false,
-   // editId: '-1',
  }
 
  componentDidMount() {
@@ -45,11 +41,6 @@ class App extends React.Component {
        this.setState({
          authed: true,
        });
-       //  const uid = authRequests.getCurrentUid();
-       //  gearRequest.getRequest(uid).then((gear) => {
-       //    this.setState({ gear });
-       //  })
-       //    .catch(err => console.error('error with getting the gear', err));
      } else {
        this.setState({
          authed: false,
@@ -62,55 +53,9 @@ class App extends React.Component {
    this.removeListener();
  }
 
- //  isAuthenticated = () => {
- //    this.setState({ authed: true });
- //  }
-
- //  deleteOneGear = (gearId) => {
- //    gearRequest.deleteGear(gearId)
- //      .then(() => {
- //        const uid = authRequests.getCurrentUid();
- //        gearRequest.getRequest(uid)
- //          .then((gear) => {
- //            this.setState({ gear });
- //          });
- //      })
- //      .catch(err => console.error('error in deleting', err));
- //  }
-
- //  formSubmitGear = (newGear) => {
- //    const { isEditing, editId } = this.state;
- //    if (isEditing) {
- //      gearRequest.putGear(editId, newGear)
- //        .then(() => {
- //          const uid = authRequests.getCurrentUid();
- //          gearRequest.getRequest(uid)
- //            .then((gear) => {
- //              this.setState({ gear, isEditing: false, editId: '-1' });
- //            });
- //        })
- //        .catch(err => console.error('error with gear post', err));
- //    } else {
- //      gearRequest.postGear(newGear)
- //        .then(() => {
- //          const uid = authRequests.getCurrentUid();
- //          gearRequest.getRequest(uid)
- //            .then((gear) => {
- //              this.setState({ gear });
- //            });
- //        })
- //        .catch(err => console.error('error in creating new gear', err));
- //    }
- //  }
-
- // passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
-
  render() {
    const {
      authed,
-     // gear,
-     // isEditing,
-     // editId,
    } = this.state;
 
    const logoutClickEvent = () => {
@@ -127,7 +72,7 @@ class App extends React.Component {
                 <Switch>
                     <PrivateRoute path='/' exact component={Gear} authed={authed} />
                     <PrivateRoute path='/home' component={Gear} authed={authed} />
-                    <PrivateRoute path='/add' authed={authed} component={GearForm} />
+                    <PrivateRoute path='/add' authed={authed} component={GearAdd} />
                     <PrivateRoute path='/edit/:id' authed={authed} component={GearEdit} />
                     <PublicRoute path='/auth' component={Auth} authed={authed} />
                 </Switch>
