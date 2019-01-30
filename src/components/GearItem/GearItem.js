@@ -12,10 +12,9 @@ class GearItem extends React.Component {
   editEvent = (e) => {
     e.preventDefault();
     const { passGearToEdit, gearstock } = this.props;
-    passGearToEdit(gearstock.id);
+    // passGearToEdit(gearstock.id);
     const getId = gearstock.id;
     this.props.history.push(`/edit/${getId}`);
-    // console.log(getId);
   }
 
   render() {

@@ -10,6 +10,7 @@ import authRequests from '../helpers/data/authRequests';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Gear from '../components/Gear/Gear';
 import GearForm from '../components/GearForm/GearForm';
+import GearEdit from '../components/GearEdit/GearEdit';
 // import gearRequest from '../helpers/data/gearRequest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -127,7 +128,7 @@ class App extends React.Component {
                     <PrivateRoute path='/' exact component={Gear} authed={authed} />
                     <PrivateRoute path='/home' component={Gear} authed={authed} />
                     <PrivateRoute path='/add' authed={authed} component={GearForm} />
-                    <PrivateRoute path='/edit/:id' authed={authed} component={GearForm} />
+                    <PrivateRoute path='/edit/:id' authed={authed} component={GearEdit} />
                     <PublicRoute path='/auth' component={Auth} authed={authed} />
                 </Switch>
               </div>

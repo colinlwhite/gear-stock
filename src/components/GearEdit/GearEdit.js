@@ -1,29 +1,19 @@
 import React from 'react';
 import gearRequest from '../../helpers/data/gearRequest';
-
-const defaultGear = {
-  name: '',
-  img: '',
-  price: 0,
-  condition: '',
-  brand: '',
-  year: '',
-  model: '',
-  category: '',
-  uid: '',
-};
+import authRequests from '../../helpers/data/authRequests';
 
 class GearEdit extends React.Component {
   state = {
-    editingGear: defaultGear,
+    newGear: '',
   }
 
-  formSubmitGearEdit = (editedGear) => {
+  formSubmitGearEdit = (newGear) => {
+    const editId = this.props.match.params.id;
     gearRequest.putGear(editId, newGear)
-    .then(() => {
-      this.setState({ })
-      this.props.history.push('/home');
-    })
+      .then(() => {
+      // this.setState({ })
+        this.props.history.push('/home');
+      });
   }
 
   formFieldStringState = (name, e) => {
@@ -40,7 +30,7 @@ class GearEdit extends React.Component {
     // const { onSubmit } = this.props;
     const myGear = { ...this.state.newGear };
     myGear.uid = authRequests.getCurrentUid();
-    this.formSubmitGear(myGear);
+    this.formSubmitGearEdit(myGear);
     // TO REFRESH THE DOM - BUT NOT INSIDE A LIFECYCLE
     // const uid = authRequests.getCurrentUid();
     // gearRequest.getRequest(uid).then((pleasework) => {
@@ -48,32 +38,25 @@ class GearEdit extends React.Component {
     // });
   }
 
-  componentDidUpdate(prevProps) {
-    const { isEditing, editId } = this.props;
-    if (prevProps !== this.props && isEditing) {
-      gearRequest.getSingleGear(editId)
-        .then((gear) => {
-          this.setState({ newGear: gear.data });
-        })
-        .catch(err => console.error('error with getSingleListing', err));
-    }
+  componentDidMount() {
+    // const { isEditing, editId } = this.props;
+    // if (prevProps !== this.props && isEditing) {
+    const editId = this.props.match.params.id;
+    gearRequest.getSingleGear(editId)
+      .then((gear) => {
+        this.setState({ newGear: gear.data });
+      })
+      .catch(err => console.error('error with getSingleListing', err));
   }
 
   // passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
 
   render() {
     const { newGear } = this.state;
-    const { isEditing } = this.props;
-    const title = () => {
-      if (isEditing) {
-        return <h1>Edit Gear</h1>;
-      }
-      return <h1>Add New Gear</h1>;
-    };
-
+    // const { isEditing } = this.props;
     return (
       <div className="listing-form col">
-      {title()}
+      <h1>Edit Gear</h1>
       <form onSubmit={this.formSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -93,5 +76,6 @@ class GearEdit extends React.Component {
     );
   }
 }
+
 
 export default GearEdit;

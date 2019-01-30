@@ -23,19 +23,19 @@ class GearForm extends React.Component {
   }
 
   formSubmitGear = (newGear) => {
-    const { isEditing, editId } = this.props;
-    if (isEditing) {
-      gearRequest.putGear(editId, newGear)
-        .then(() => {
-          // const uid = authRequests.getCurrentUid();
-          // // gearRequest.getRequest(uid)
-          // //   .then((gear) => {
-          this.setState({ isEditing: false, editId: '-1' });
-          this.props.history.push('/home');
-          // });
-        });
-      // .catch(err => console.error('error with gear post', err));
-    } else {
+    // const { isEditing, editId } = this.props;
+    // if (isEditing) {
+    //   gearRequest.putGear(editId, newGear)
+    //     .then(() => {
+    //       // const uid = authRequests.getCurrentUid();
+    //       // // gearRequest.getRequest(uid)
+    //       // //   .then((gear) => {
+    //       this.setState({ isEditing: false, editId: '-1' });
+    //       this.props.history.push('/home');
+    //       // });
+    //     });
+    //   // .catch(err => console.error('error with gear post', err));
+    // } else {
       gearRequest.postGear(newGear)
         .then(() => {
           // const uid = authRequests.getCurrentUid();
@@ -45,7 +45,7 @@ class GearForm extends React.Component {
           this.props.history.push('/home');
         });
       // .catch(err => console.error('error in creating new gear', err));
-    }
+   // }
   }
 
   formFieldStringState = (name, e) => {
@@ -70,16 +70,16 @@ class GearForm extends React.Component {
     // });
   }
 
-  componentDidUpdate(prevProps) {
-    const { isEditing, editId } = this.props;
-    if (prevProps !== this.props && isEditing) {
-      gearRequest.getSingleGear(editId)
-        .then((gear) => {
-          this.setState({ newGear: gear.data });
-        })
-        .catch(err => console.error('error with getSingleListing', err));
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   const { isEditing, editId } = this.props;
+  //   if (prevProps !== this.props && isEditing) {
+  //     gearRequest.getSingleGear(editId)
+  //       .then((gear) => {
+  //         this.setState({ newGear: gear.data });
+  //       })
+  //       .catch(err => console.error('error with getSingleListing', err));
+  //   }
+  // }
 
   // passGearToEdit = gearId => this.setState({ isEditing: true, editId: gearId });
 
@@ -109,7 +109,7 @@ class GearForm extends React.Component {
             onChange={this.nameChange}
           />
         </div>
-        <button className="btn btn-danger">Save Gear</button>
+        <button className="btn btn-danger">Add Gear</button>
       </form>
     </div>
     );
