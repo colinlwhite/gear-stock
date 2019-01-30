@@ -1,22 +1,18 @@
 import React from 'react';
-import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
+import authRequests from '../../helpers/data/authRequests';
 
-const defaultGear = {
-  name: '',
-  img: '',
-  price: 0,
-  condition: '',
-  brand: '',
-  year: '',
-  model: '',
-  category: '',
-  uid: '',
-};
-
-class GearForm extends React.Component {
+class GearEdit extends React.Component {
   state = {
-    newGear: defaultGear,
+    newGear: '',
+  }
+
+  formSubmitGearEdit = (newGear) => {
+    const editId = this.props.match.params.id;
+    gearRequest.putGear(editId, newGear)
+      .then(() => {
+        this.props.history.push('/home');
+      });
   }
 
   formFieldStringState = (name, e) => {
@@ -30,37 +26,25 @@ class GearForm extends React.Component {
 
   formSubmit = (e) => {
     e.preventDefault();
-    const { onSubmit } = this.props;
     const myGear = { ...this.state.newGear };
     myGear.uid = authRequests.getCurrentUid();
-    onSubmit(myGear);
-    this.setState({ newGear: defaultGear });
+    this.formSubmitGearEdit(myGear);
   }
 
-  componentDidUpdate(prevProps) {
-    const { isEditing, editId } = this.props;
-    if (prevProps !== this.props && isEditing) {
-      gearRequest.getSingleGear(editId)
-        .then((gear) => {
-          this.setState({ newGear: gear.data });
-        })
-        .catch(err => console.error('error with getSingleListing', err));
-    }
+  componentDidMount() {
+    const editId = this.props.match.params.id;
+    gearRequest.getSingleGear(editId)
+      .then((gear) => {
+        this.setState({ newGear: gear.data });
+      })
+      .catch(err => console.error('error with getSingleListing', err));
   }
 
   render() {
     const { newGear } = this.state;
-    const { isEditing } = this.props;
-    const title = () => {
-      if (isEditing) {
-        return <h1>Edit Gear</h1>;
-      }
-      return <h1>Add New Gear</h1>;
-    };
-
     return (
       <div className="listing-form col">
-      {title()}
+      <h1>Edit Gear</h1>
       <form onSubmit={this.formSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -74,7 +58,7 @@ class GearForm extends React.Component {
             onChange={this.nameChange}
           />
         </div>
-        <button className="btn btn-danger">Save Gear</button>
+        <button className="btn btn-danger">Update Gear</button>
       </form>
     </div>
     );
@@ -82,4 +66,4 @@ class GearForm extends React.Component {
 }
 
 
-export default GearForm;
+export default GearEdit;

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
 
 class GearItem extends React.Component {
   deleteEvent = (e) => {
@@ -9,8 +11,9 @@ class GearItem extends React.Component {
 
   editEvent = (e) => {
     e.preventDefault();
-    const { passGearToEdit, gearstock } = this.props;
-    passGearToEdit(gearstock.id);
+    const { gearstock } = this.props;
+    const getId = gearstock.id;
+    this.props.history.push(`/edit/${getId}`);
   }
 
   render() {
@@ -19,10 +22,10 @@ class GearItem extends React.Component {
       <div>
         <h2>{gearstock.name}</h2>
         <span><button className="btn btn-danger" onClick={this.deleteEvent}>DELETE</button></span>
-        <span><button className="btn btn-primary" onClick={this.editEvent}>EDIT</button></span>
+        <span><Button to='edit/:id' className="btn btn-primary" onClick={this.editEvent}>EDIT</Button></span>
       </div>
     );
   }
 }
 
-export default GearItem;
+export default withRouter(GearItem);
