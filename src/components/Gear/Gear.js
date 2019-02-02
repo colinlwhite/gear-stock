@@ -28,6 +28,7 @@ class Gear extends React.Component {
         gearRequest.getRequest(uid)
           .then((gear) => {
             this.setState({ gear });
+            this.setState({ filteredGear: gear });
           });
       })
       .catch(err => console.error('error in deleting', err));
