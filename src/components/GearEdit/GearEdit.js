@@ -4,7 +4,7 @@ import authRequests from '../../helpers/data/authRequests';
 
 class GearEdit extends React.Component {
   state = {
-    newGear: '',
+    newGear: [],
   }
 
   formSubmitGearEdit = (newGear) => {
