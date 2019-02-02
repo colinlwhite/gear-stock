@@ -22,7 +22,20 @@ class GearEdit extends React.Component {
     this.setState({ newGear: tempGear });
   }
 
+  formFieldNumberState = (name, e) => {
+    e.preventDefault();
+    const tempGear = { ...this.state.newGear };
+    tempGear[name] = e.target.value * 1;
+    this.setState({ newGear: tempGear });
+  }
+
   nameChange = e => this.formFieldStringState('name', e);
+
+  imageChange = e => this.formFieldStringState('img', e);
+
+  priceChange = e => this.formFieldNumberState('price', e);
+
+  conditionChange = e => this.formFieldStringState('condition', e);
 
   formSubmit = (e) => {
     e.preventDefault();
@@ -56,6 +69,45 @@ class GearEdit extends React.Component {
             placeholder="Gear Item"
             value={newGear.name}
             onChange={this.nameChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="image">Image:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="image"
+            aria-describedby="gearImage"
+            placeholder="image URL"
+            value={newGear.img}
+            onChange={this.imageChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="price">Price:</label>
+          <input
+            type="number"
+            className="form-control"
+            id="price"
+            aria-describedby="gearPrice"
+            placeholder=""
+            value={newGear.price}
+            onChange={this.priceChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="condition">Condition:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="condition"
+            aria-describedby="gearCondition"
+            placeholder="condition"
+            value={newGear.condition}
+            onChange={this.conditionChange}
           />
         </div>
         <button className="btn btn-danger">Update Gear</button>
