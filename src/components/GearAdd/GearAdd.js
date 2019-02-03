@@ -49,6 +49,14 @@ class GearForm extends React.Component {
 
   conditionChange = e => this.formFieldStringState('condition', e);
 
+  brandChange = e => this.formFieldStringState('brand', e);
+
+  modelChange = e => this.formFieldStringState('model', e);
+
+  categoryChange = e => this.formFieldStringState('category', e);
+
+  yearChange = e => this.formFieldStringState('year', e);
+
 
   formSubmit = (e) => {
     e.preventDefault();
@@ -78,6 +86,32 @@ class GearForm extends React.Component {
         </div>
 
         <div className="form-group">
+          <label htmlFor="brand">Brand:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="brand"
+            aria-describedby="gearBrand"
+            placeholder="Brand"
+            value={newGear.brand}
+            onChange={this.brandChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="model">Model:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="model"
+            aria-describedby="gearModel"
+            placeholder="model"
+            value={newGear.model}
+            onChange={this.modelChange}
+          />
+        </div>
+
+        <div className="form-group">
           <label htmlFor="image">Image:</label>
           <input
             type="text"
@@ -103,19 +137,6 @@ class GearForm extends React.Component {
           />
         </div>
 
-        {/* <div className="form-group">
-          <label htmlFor="condition">Condition:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="condition"
-            aria-describedby="gearCondition"
-            placeholder="condition"
-            value={newGear.condition}
-            onChange={this.conditionChange}
-          />
-        </div> */}
-
         <div className="form-group">
         <label htmlFor="condition">Condition:</label>
         <Input type="select" onChange={this.conditionChange}>
@@ -127,6 +148,38 @@ class GearForm extends React.Component {
                 <option>Fair</option>
                 <option>Poor</option>
                 <option>Doesn't Work</option>
+              </Input>
+              </div>
+
+              <div className="form-group">
+        <label htmlFor="category">Category:</label>
+        <Input type="select" onChange={this.categoryChange}>
+                <option>Acoustic Guitars</option>
+                <option>Amps</option>
+                <option>Band and Orchestra</option>
+                <option>Bass Guitars</option>
+                <option>DJ and Lighting</option>
+                <option>Drums and Percussion</option>
+                <option>Effects and Pedals</option>
+                <option>Electric Guitars</option>
+                <option>Home Audio</option>
+                <option>Keyboards and Synths</option>
+                <option>Pro Audio</option>
+              </Input>
+              </div>
+
+              <div className="form-group">
+        <label htmlFor="year">Year:</label>
+        <Input type="select" onChange={this.yearChange}>
+                <option>2010s</option>
+                <option>mid-2000s</option>
+                <option>1990s</option>
+                <option>1980s</option>
+                <option>1970s</option>
+                <option>1960s</option>
+                <option>1950s</option>
+                <option>1940s</option>
+                <option>1930s</option>
               </Input>
               </div>
 
