@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from 'reactstrap';
 import gearRequest from '../../helpers/data/gearRequest';
 import authRequests from '../../helpers/data/authRequests';
 
@@ -98,7 +99,7 @@ class GearEdit extends React.Component {
           />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="condition">Condition:</label>
           <input
             type="text"
@@ -109,7 +110,22 @@ class GearEdit extends React.Component {
             value={newGear.condition}
             onChange={this.conditionChange}
           />
-        </div>
+        </div> */}
+
+<div className="form-group">
+        <label htmlFor="condition">Condition:</label>
+        <Input type="select" onChange={this.conditionChange} value={newGear.condition}>
+                <option>Just Got It</option>
+                <option>Just Like New</option>
+                <option>Excellent</option>
+                <option>Very Good</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+                <option>Doesn't Work</option>
+              </Input>
+              </div>
+
         <button className="btn btn-danger">Update Gear</button>
       </form>
     </div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Input } from 'reactstrap';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 
 const defaultGear = {
   name: '',
-  img: '',
+  img: 'http://www.scottishculture.org/index.php/themes/scottishculture/images/music_placeholder.png',
   price: 0,
   condition: '',
   brand: '',
@@ -102,7 +103,7 @@ class GearForm extends React.Component {
           />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="condition">Condition:</label>
           <input
             type="text"
@@ -113,7 +114,21 @@ class GearForm extends React.Component {
             value={newGear.condition}
             onChange={this.conditionChange}
           />
-        </div>
+        </div> */}
+
+        <div className="form-group">
+        <label htmlFor="condition">Condition:</label>
+        <Input type="select" onChange={this.conditionChange}>
+                <option>Just Got It</option>
+                <option>Just Like New</option>
+                <option>Excellent</option>
+                <option>Very Good</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+                <option>Doesn't Work</option>
+              </Input>
+              </div>
 
         <button className="btn btn-danger">Add Gear</button>
       </form>
