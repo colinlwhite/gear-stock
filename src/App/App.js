@@ -11,6 +11,7 @@ import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Gear from '../components/Gear/Gear';
 import GearAdd from '../components/GearAdd/GearAdd';
 import GearEdit from '../components/GearEdit/GearEdit';
+import SingleView from '../components/SingleView/SingleView';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -74,6 +75,7 @@ class App extends React.Component {
                     <PrivateRoute path='/home' component={Gear} authed={authed} />
                     <PrivateRoute path='/add' authed={authed} component={GearAdd} />
                     <PrivateRoute path='/edit/:id' authed={authed} component={GearEdit} />
+                    <PrivateRoute path='/gear/:id' authed={authed} component={SingleView} />
                     <PublicRoute path='/auth' component={Auth} authed={authed} />
                 </Switch>
               </div>

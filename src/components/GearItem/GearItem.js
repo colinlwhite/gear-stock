@@ -18,11 +18,18 @@ class GearItem extends React.Component {
     this.props.history.push(`/edit/${getId}`);
   }
 
+  singleViewEvent = (e) => {
+    e.preventDefault();
+    const { gearstock } = this.props;
+    const singleId = gearstock.id;
+    this.props.history.push(`/gear/${singleId}`);
+  }
+
   render() {
     const { gearstock } = this.props;
     return (
       <div>
-        <img className="gear-item-image" src={gearstock.img} alt="gear card" />
+        <img to='gear/:id' className="gear-item-image" src={gearstock.img} alt="gear card" onClick={this.singleViewEvent} />
         <h2>{gearstock.name}</h2>
         <h2>{formatPrice(gearstock.price)}</h2>
         <h6>{gearstock.condition}</h6>
