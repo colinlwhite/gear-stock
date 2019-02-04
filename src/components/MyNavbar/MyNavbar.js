@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -24,6 +25,9 @@ class MyNavbar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink tag={RRNavLink} to='/overview'>Overview</NavLink>
+            </NavItem>
               <NavItem>
                 { isAuthed ? <NavLink onClick={logoutClickEvent}>Logout</NavLink> : ''}
               </NavItem>
