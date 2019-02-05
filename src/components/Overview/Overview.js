@@ -15,8 +15,8 @@ class Overview extends React.Component {
     gearRequest.getRequest(uid).then((gear) => {
       const sortedArray = [...gear].sort(function (a, b) {
         return b.price - a.price;
-        });
-        this.setState({ gear: sortedArray });
+      });
+      this.setState({ gear: sortedArray });
       console.log({ gear: this.state.gear });
     })
       .catch(err => console.error('error with getting the gear', err));
@@ -25,9 +25,8 @@ class Overview extends React.Component {
 
   render() {
     const { gear } = this.state;
-    const gearByValue = gear.map(ascendingGear => {
-      console.log(ascendingGear.price);
-    });
+    const gearByValue = gear.map(ascendingGear => <ul key={ascendingGear.id}>{ascendingGear.price}</ul>);
+
     const totalValue = gear.reduce((acc, val) => {
       return val.price ? acc + val.price : acc;
     }, 0);
