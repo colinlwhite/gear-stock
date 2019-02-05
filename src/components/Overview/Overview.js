@@ -1,6 +1,7 @@
 import React from 'react';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
+import formatPrice from '../../helpers/formatPrice';
 // import { withRouter } from 'react-router-dom';
 import './Overview.scss';
 
@@ -20,10 +21,18 @@ class Overview extends React.Component {
 
 
   render() {
-    // const { singleGear } = this.state;
+    const { gear } = this.state;
+    const totalValue = gear.reduce((acc, val) => {
+      return val.price ? acc + val.price : acc;
+    }, 0);
+    const gearCount = gear.length;
+    const averageGearValue = totalValue / gearCount;
     return (
       <div>
         <h1>Overview</h1>
+        <h1>{formatPrice(totalValue)}</h1>
+        <h1>{gearCount}</h1>
+        <h1>{formatPrice(averageGearValue)}</h1>
       </div>
     );
   }
