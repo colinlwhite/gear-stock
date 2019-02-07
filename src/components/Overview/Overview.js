@@ -2,6 +2,7 @@ import React from 'react';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 import formatPrice from '../../helpers/formatPrice';
+import Chart from '../../components/PieChart/PieChart';
 // import { withRouter } from 'react-router-dom';
 import './Overview.scss';
 
@@ -17,7 +18,7 @@ class Overview extends React.Component {
         return b.price - a.price;
       });
       this.setState({ gear: sortedArray });
-      console.log({ gear: this.state.gear });
+      // console.log({ gear: this.state.gear });
     })
       .catch(err => console.error('error with getting the gear', err));
   }
@@ -40,6 +41,7 @@ class Overview extends React.Component {
         <h1>{gearCount}</h1>
         <h1>{formatPrice(averageGearValue)}</h1>
         <ul>{gearByValue}</ul>
+        <Chart />
       </div>
     );
   }
