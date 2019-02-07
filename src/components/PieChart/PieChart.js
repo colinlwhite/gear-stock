@@ -2,49 +2,34 @@ import React from 'react';
 import {
   PieChart,
   Pie,
-  Cell,
+  Legend,
+  Tooltip
 } from 'recharts';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-const data = [{ name: 'Group A', value: 1000 }, { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 }, { name: 'Group D', value: 200 }];
+const data01 = [{name: 'Drums & Percussion', value: 40}, {name: 'Home Audio', value: 30},
+  {name: 'Electric Guitars', value: 30}, {name: 'Band and Orchestra', value: 20},
+  {name: 'Acoustic Guitars', value: 27}, {name: 'Keyboards and Synths', value: 18}]
+
+const data02 = [{name: '1970s', value: 24}, {name: '1990s', value: 45},
+  {name: '1940s', value: 13}, {name: '2010s', value: 98},
+  {name: '1980s', value: 39}, {name: 'mid-2000s', value: 48}];
+
 
 class Chart extends React.Component {
 
-	render() {
-    const RADIAN = Math.PI / 180;            
-    const renderCustomizedLabel = ({
-      cx, cy, midAngle, innerRadius, outerRadius, percent, index 
-    }) => {
-      const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-      const x = cx + radius * Math.cos(-midAngle * RADIAN);
-      const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-      return (
-    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-    	{`${(percent * 100).toFixed(0)}%`}
-    </text>
-      );
-    };
+	 render() {
   	return (
-    	<PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
-        <Pie
-          data={data} 
-          cx={300} 
-          cy={200} 
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={80} 
-          fill="#8884d8"
-        >
-        	{
-          	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
-          }
-        </Pie>
-      </PieChart>
+      <div>
+    	<PieChart width={800} height={400}>
+        <Pie isAnimationActive={false} data={data01} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/>
+        <Pie data={data02} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d"/>
+        <Tooltip/>
+       </PieChart>
+       </div>
     );
   }
+
 }
 
 export default Chart;
