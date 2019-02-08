@@ -17,8 +17,11 @@ const data02 = [{name: '1970s', value: 24}, {name: '1990s', value: 45},
 
 
 class Chart extends React.Component {
+  
 
 	 render() {
+    const { gear } = this.props;
+
   	return (
       <div>
     	<PieChart width={800} height={400}>

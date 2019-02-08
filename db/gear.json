@@ -43,6 +43,50 @@
       "model": "MW",
       "category": "Drums & Percussion",
       "uid": "1234"
+    },
+    "gear5": {
+      "name": "Guitar",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Electric Guitars",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+    },
+    "gear6": {
+      "name": "Violin",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Band and Orchestra",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+    },
+    "gear7": {
+      "name": "Speakers",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "Home Audio",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+    },
+    "gear8": {
+      "name": "DJ Machine",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 2000,
+      "condition": "Mint",
+      "brand": "Pearl",
+      "year": "2010s",
+      "model": "MW",
+      "category": "DJ and Lighting",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     }
   }
 }
