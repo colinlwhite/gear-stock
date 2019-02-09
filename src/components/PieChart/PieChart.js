@@ -28,13 +28,17 @@ class Chart extends React.Component {
     const forTheChart = {};
 
     gear.forEach((GearItem) => {
-      // does the forTheChart.drum exist?
+      // If forTheChart.drum doesn't exist
+      // Should be true because the array above is empty
+      // Create forTheChart.drum, using gearItem's data
+      console.log(forTheChart);
       if (!forTheChart[GearItem.categoryData]) {
         forTheChart[GearItem.categoryData] = {
           'name': GearItem.categoryDisplay,
           'value': GearItem.price
         };
       } else {
+        // if it does, add the gear item price to forTheChart.drum.price
         forTheChart[GearItem.categoryData].value += GearItem.price;
       }
     });

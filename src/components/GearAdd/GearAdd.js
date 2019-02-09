@@ -11,6 +11,7 @@ const defaultGear = {
   brand: '',
   year: '',
   model: '',
+  categoryData: '',
   categoryDisplay: '',
   uid: '',
 };
@@ -53,7 +54,15 @@ class GearForm extends React.Component {
 
   modelChange = e => this.formFieldStringState('model', e);
 
-  categoryDisplayChange = e => this.formFieldStringState('categoryDisplay', e);
+  categoryDisplayChange = (e) => {
+    const tempGear = { ...this.state.newGear };
+    tempGear.categoryDisplay = e.currentTarget.value;
+    console.log(e.currentTarget.value);
+    if (e.currentTarget.value === 'Drums & Percussion') {
+      tempGear.categoryData = 'drum';
+    }
+    this.setState({ newGear: tempGear });
+  }
 
   yearChange = e => this.formFieldStringState('year', e);
 
@@ -159,7 +168,7 @@ class GearForm extends React.Component {
                 <option>Band and Orchestra</option>
                 <option>Bass Guitars</option>
                 <option>DJ and Lighting</option>
-                <option>Drums and Percussion</option>
+                <option>Drums & Percussion</option>
                 <option>Effects and Pedals</option>
                 <option>Electric Guitars</option>
                 <option>Home Audio</option>
