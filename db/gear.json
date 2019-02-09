@@ -8,29 +8,32 @@
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Drums & Percussion",
+      "categoryDisplay": "Drums & Percussion",
+      "categoryData": "drum",
       "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear2": {
-      "name": "Pearl Reference",
+      "name": "Parker Guitar",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
       "price": 2000,
       "condition": "Mint",
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Drums & Percussion",
+      "categoryDisplay": "Electric Guitars",
+      "categoryData": "guitars",
       "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear3": {
-      "name": "Pearl Reference Pure",
+      "name": "Orange Amp",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
       "price": 2000,
       "condition": "Mint",
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Drums & Percussion",
+      "categoryDisplay": "Amps",
+      "categoryData": "amps",
       "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear4": {
@@ -41,7 +44,8 @@
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Drums & Percussion",
+      "categoryDisplay": "Drums & Percussion",
+      "categoryData": "drum",
       "uid": "1234"
     },
     "gear5": {
@@ -52,8 +56,9 @@
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Electric Guitars",
-      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+      "categoryDisplay": "Electric Guitars",
+      "categoryData": "eguitar",
+      "uid": "1234"
     },
     "gear6": {
       "name": "Violin",
@@ -63,8 +68,9 @@
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Band and Orchestra",
-      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+      "categoryDisplay": "Band and Orchestra",
+      "categoryData": "band",
+      "uid": "1234"
     },
     "gear7": {
       "name": "Speakers",
@@ -74,8 +80,9 @@
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "Home Audio",
-      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+      "categoryDisplay": "Home Audio",
+      "categoryData": "home",
+      "uid": "1234"
     },
     "gear8": {
       "name": "DJ Machine",
@@ -85,8 +92,9 @@
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "category": "DJ and Lighting",
-      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+      "categoryDisplay": "DJ and Lighting",
+      "categoryData": "dj",
+      "uid": "1234"
     }
   }
 }

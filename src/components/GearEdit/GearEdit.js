@@ -42,7 +42,7 @@ class GearEdit extends React.Component {
 
   modelChange = e => this.formFieldStringState('model', e);
 
-  categoryChange = e => this.formFieldStringState('category', e);
+  categoryDisplayChange = e => this.formFieldStringState('categoryDisplay', e);
 
   yearChange = e => this.formFieldStringState('year', e);
 
@@ -148,8 +148,8 @@ class GearEdit extends React.Component {
               </div>
 
               <div className="form-group">
-        <label htmlFor="category">Category:</label>
-        <Input type="select" onChange={this.categoryChange} value={newGear.category}>
+        <label htmlFor="categoryDisplay">Category:</label>
+        <Input type="select" onChange={this.categoryDisplayChange} value={newGear.categoryDisplay}>
                 <option>Acoustic Guitars</option>
                 <option>Amps</option>
                 <option>Band and Orchestra</option>
