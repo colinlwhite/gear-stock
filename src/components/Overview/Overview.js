@@ -2,7 +2,7 @@ import React from 'react';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 import formatPrice from '../../helpers/formatPrice';
-import Chart from '../../components/PieChart/PieChart';
+import Chart from '../PieChart/PieChart';
 // import { withRouter } from 'react-router-dom';
 import './Overview.scss';
 
@@ -41,7 +41,9 @@ class Overview extends React.Component {
         <h1>{gearCount}</h1>
         <h1>{formatPrice(averageGearValue)}</h1>
         <ul>{gearByValue}</ul>
-        <Chart />
+        <Chart
+        gear={gear}
+        />
       </div>
     );
   }

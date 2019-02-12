@@ -42,7 +42,7 @@ class Gear extends React.Component {
       this.setState({ filteredGear: gear });
     } else {
       gear.forEach((gears) => {
-        if (gears.name.toLowerCase().includes(value.toLowerCase()) || gears.category.toLowerCase().includes(value.toLowerCase())) {
+        if (gears.name.toLowerCase().includes(value.toLowerCase()) || gears.categoryDisplay.toLowerCase().includes(value.toLowerCase())) {
           filteredGear.push(gears);
         }
         this.setState({ filteredGear });
