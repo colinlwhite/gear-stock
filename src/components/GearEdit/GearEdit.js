@@ -42,7 +42,34 @@ class GearEdit extends React.Component {
 
   modelChange = e => this.formFieldStringState('model', e);
 
-  categoryDisplayChange = e => this.formFieldStringState('categoryDisplay', e);
+  categoryDisplayChange = (e) => {
+    const tempGear = { ...this.state.newGear };
+    tempGear.categoryDisplay = e.currentTarget.value;
+    if (e.currentTarget.value === 'Drums & Percussion') {
+      tempGear.categoryData = 'drum';
+    } else if (e.currentTarget.value === 'DJ and Lighting') {
+      tempGear.categoryData = 'dj';
+    } else if (e.currentTarget.value === 'Electric Guitars') {
+      tempGear.categoryData = 'eguitars';
+    } else if (e.currentTarget.value === 'Amps') {
+      tempGear.categoryData = 'amps';
+    } else if (e.currentTarget.value === 'Acoustic Guitars') {
+      tempGear.categoryData = 'aguitars';
+    } else if (e.currentTarget.value === 'Bass Guitars') {
+      tempGear.categoryData = 'bassguitar';
+    } else if (e.currentTarget.value === 'Band and Orchestra') {
+      tempGear.categoryData = 'band';
+    } else if (e.currentTarget.value === 'Home Audio') {
+      tempGear.categoryData = 'home';
+    } else if (e.currentTarget.value === 'Effects and Pedals') {
+      tempGear.categoryData = 'effectspedals';
+    } else if (e.currentTarget.value === 'Keyboards and Synths') {
+      tempGear.categoryData = 'keyboards';
+    } else if (e.currentTarget.value === 'Pro Audio') {
+      tempGear.categoryData = 'proaudio';
+    }
+    this.setState({ newGear: tempGear });
+  }
 
   yearChange = e => this.formFieldStringState('year', e);
 
@@ -155,7 +182,7 @@ class GearEdit extends React.Component {
                 <option>Band and Orchestra</option>
                 <option>Bass Guitars</option>
                 <option>DJ and Lighting</option>
-                <option>Drums and Percussion</option>
+                <option>Drums & Percussion</option>
                 <option>Effects and Pedals</option>
                 <option>Electric Guitars</option>
                 <option>Home Audio</option>

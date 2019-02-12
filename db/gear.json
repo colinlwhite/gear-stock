@@ -3,7 +3,7 @@
     "gear1": {
       "name": "Pearl Masterworks",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 3200,
       "condition": "Mint",
       "brand": "Pearl",
       "year": "2010s",
@@ -13,23 +13,23 @@
       "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear2": {
-      "name": "Parker Guitar",
+      "name": "Gibson Les Paul Standard",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 11250,
       "condition": "Mint",
-      "brand": "Pearl",
-      "year": "2010s",
-      "model": "MW",
+      "brand": "Gibson",
+      "year": "1950s",
+      "model": "LSSD",
       "categoryDisplay": "Electric Guitars",
-      "categoryData": "guitars",
+      "categoryData": "eguitars",
       "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear3": {
       "name": "Orange Amp",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 800,
       "condition": "Mint",
-      "brand": "Pearl",
+      "brand": "Orange",
       "year": "2010s",
       "model": "MW",
       "categoryDisplay": "Amps",
@@ -37,64 +37,100 @@
       "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear4": {
-      "name": "Pearl Master's Complete",
+      "name": "Taylor Guitar",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 9400,
       "condition": "Mint",
-      "brand": "Pearl",
+      "brand": "Taylor",
       "year": "2010s",
       "model": "MW",
-      "categoryDisplay": "Drums & Percussion",
-      "categoryData": "drum",
-      "uid": "1234"
+      "categoryDisplay": "Acoustic Guitars",
+      "categoryData": "aguitars",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear5": {
-      "name": "Guitar",
+      "name": "Ibanez Bass Guitar",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
       "price": 2000,
       "condition": "Mint",
-      "brand": "Pearl",
+      "brand": "Ibanez",
       "year": "2010s",
       "model": "MW",
-      "categoryDisplay": "Electric Guitars",
-      "categoryData": "eguitar",
-      "uid": "1234"
+      "categoryDisplay": "Bass Guitars",
+      "categoryData": "bassguitar",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear6": {
       "name": "Violin",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 1575,
       "condition": "Mint",
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
       "categoryDisplay": "Band and Orchestra",
       "categoryData": "band",
-      "uid": "1234"
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear7": {
-      "name": "Speakers",
+      "name": "Studio Monitors",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 4540,
       "condition": "Mint",
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
       "categoryDisplay": "Home Audio",
       "categoryData": "home",
-      "uid": "1234"
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     },
     "gear8": {
-      "name": "DJ Machine",
+      "name": "Audio-Technica Turntable",
       "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
-      "price": 2000,
+      "price": 720,
+      "condition": "Mint",
+      "brand": "Audio-Technica",
+      "year": "2010s",
+      "model": "AT-LP120-USB",
+      "categoryDisplay": "DJ and Lighting",
+      "categoryData": "dj",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+    },
+    "gear9": {
+      "name": "Boss BD-2 Blues Driver Pedal",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 773,
+      "condition": "Mint",
+      "brand": "Boss",
+      "year": "2010s",
+      "model": "MW",
+      "categoryDisplay": "Effects and Pedals",
+      "categoryData": "effectspedals",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+    },
+    "gear10": {
+      "name": "Moog Subsequent 37 Analog Synthesizer",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 1200,
+      "condition": "Mint",
+      "brand": "Moog",
+      "year": "2010s",
+      "model": "MW",
+      "categoryDisplay": "Keyboards and Synths",
+      "categoryData": "keyboards",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
+    },
+    "gear11": {
+      "name": "Mackie ProFX16v2 Mixer with USB and Effects",
+      "img": "http://img.photobucket.com/albums/v731/sandyman/P1010899.jpg",
+      "price": 1020,
       "condition": "Mint",
       "brand": "Pearl",
       "year": "2010s",
       "model": "MW",
-      "categoryDisplay": "DJ and Lighting",
-      "categoryData": "dj",
-      "uid": "1234"
+      "categoryDisplay": "Pro Audio",
+      "categoryData": "proaudio",
+      "uid": "2Yu9Riz2k3gYzzKk9BjWRITerUz1"
     }
   }
 }
