@@ -1,8 +1,14 @@
-.gear-item-image {
-  max-width: 350px;
-  max-height: 300px;
-}
+// .gear-item-image {
+//   max-width: 350px;
+//   max-height: 300px;
+// }
 
-.container {
-  display: flex;
+// .container {
+//   display: flex;
+// }
+
+.gear-item-image {
+  width: 100%;
+  height: 18vw;
+  object-fit: cover;
 }

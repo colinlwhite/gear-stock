@@ -28,7 +28,6 @@ class GearItem extends React.Component {
   render() {
     const { gearstock } = this.props;
     return (
-      <div className="container mt-4 d-flex flex-wrap">
       <div className="col-auto mb-3">
         <div className="card" style={{ width: '18rem' }}>
         <img to='gear/:id' className="gear-item-image" src={gearstock.img} alt="gear card" onClick={this.singleViewEvent} />
@@ -37,7 +36,6 @@ class GearItem extends React.Component {
           <h6>{gearstock.condition}</h6>
           <span><button className="btn btn-danger" onClick={this.deleteEvent}>DELETE</button></span>
           <span><Button to='edit/:id' className="btn btn-primary" onClick={this.editEvent}>EDIT</Button></span>
-      </div>
       </div>
       </div>
     );
