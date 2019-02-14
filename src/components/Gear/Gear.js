@@ -63,12 +63,12 @@ class Gear extends React.Component {
     ));
     return (
       <div className="main-container">
-        <NavLink tag={RRNavLink} to='/add'><button className="btn btn-success">ADD Gear</button></NavLink>
+        <NavLink tag={RRNavLink} to='/add'><button className="btn btn-outline-dark"><i class="far fa-plus-square fa-3x"></i></button></NavLink>
         <SearchField
             placeholder="Search your gear"
             onChange={ this.onChange }
             searchText=""
-            classNames=""
+            classNames="search-bar"
           />
         <h1>Your Gear</h1>
         <div className="container mt-4 d-flex flex-wrap">{gearItemComponents}</div>

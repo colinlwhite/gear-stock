@@ -36,14 +36,14 @@ class Overview extends React.Component {
 
     return (
       <div>
-        <h1>Overview</h1>
+        <h1 className="overview-title">Overview</h1>
         <h1>{formatPrice(totalValue)}</h1>
-        <h1>{gearCount}</h1>
-        <h1>{formatPrice(averageGearValue)}</h1>
-        <ul>{gearByValue}</ul>
         <Chart
         gear={gear}
         />
+        <h1>{gearCount}</h1>
+        <h1>{formatPrice(averageGearValue)}</h1>
+        <ul>{gearByValue}</ul>
       </div>
     );
   }
