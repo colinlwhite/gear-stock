@@ -2,3 +2,42 @@
   text-align: center;
   font-weight: bold;
 }
+
+.container-overview {
+  margin: 0 auto;
+  // margin-top: 0;
+  // margin-bottom: 0;
+  // margin-left: 300px;
+  // margin-right: 300px;
+}
+
+// .total-value-div {
+//   margin-left: -100px;
+// }
+
+
+.piechart-value-div{
+  padding-left: 175px;
+}
+
+.average-price-div {
+  padding-left: 280px;
+}
+
+.total-val-num {
+  margin-top: 125px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.avg-price-num, .gear-count-num {
+  margin-top: 75px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.by-value-div {
+  height: 300px;
+  border: 2px solid black;
+  overflow-y: scroll;
+}

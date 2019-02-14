@@ -35,35 +35,39 @@ class Overview extends React.Component {
     const averageGearValue = totalValue / gearCount;
 
     return (
-      <div className="main-overview-div">
+      <div className="container-overview">
         <h1 className="overview-title">Overview</h1>
         
+        <div className="row">
         <div className="total-value-div">
-        <h1 className="">TOTAL VALUE</h1>
-        <h2>{formatPrice(totalValue)}</h2>
+            <h1 className="">TOTAL VALUE</h1>
+            <h2 className="total-val-num">{formatPrice(totalValue)}</h2>
         </div>
 
         <div className="piechart-value-div">
-        <h1 className="">CATEGORY VALUES</h1>
-        <Chart
-        gear={gear}
-        />
+            <h1 className="">CATEGORY VALUES</h1>
+            <Chart
+            gear={gear}
+            />
+        </div>
         </div>
 
+        <div className="row">
         <div className="count-div">
-        <h1 className="">GEAR COUNT</h1>
-        <h2>{gearCount}</h2>
+            <h1 className="">GEAR COUNT</h1>
+            <h2 className="gear-count-num">{gearCount}</h2>
         </div>
 
         <div className="average-price-div">
-        <h1 className="">AVERAGE PRICE</h1>
-        <h2>{formatPrice(averageGearValue)}</h2>
+            <h1 className="">AVERAGE PRICE</h1>
+            <h2 className="avg-price-num">{formatPrice(averageGearValue)}</h2>
+        </div>
         </div>
         
-        <div className="byvalue-div">
-        <ul>{gearByValue}</ul>
+        <div className="by-value-div">
+          <ul>{gearByValue}</ul>
         </div>
-        
+
       </div>
     );
   }
