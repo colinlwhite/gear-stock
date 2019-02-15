@@ -2,6 +2,7 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
+import './GearAdd.scss';
 
 const defaultGear = {
   name: '',
@@ -211,7 +212,7 @@ class GearForm extends React.Component {
               </Input>
               </div>
 
-        <button className="btn btn-danger">Add Gear</button>
+        <button className="btn btn-outline-dark">SAVE</button>
       </form>
     </div>
     );

@@ -1,0 +1,28 @@
+.main-container {
+  margin: 0 auto;
+}
+
+.flex-wrap {
+  justify-content: center;
+}
+
+.search-bar {
+  width: 925px;
+  border: white;
+  margin-top: 20px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+body {
+  background-image: url(../images/background-image.jpeg);
+  /* height: 100vh; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+  height: 100%;
+  color: white;
+}

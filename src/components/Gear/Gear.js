@@ -5,6 +5,7 @@ import { NavLink } from 'reactstrap';
 import authRequests from '../../helpers/data/authRequests';
 import gearRequest from '../../helpers/data/gearRequest';
 import GearItem from '../GearItem/GearItem';
+import './Gear.scss';
 
 class Gear extends React.Component {
   state = {
@@ -61,16 +62,16 @@ class Gear extends React.Component {
       />
     ));
     return (
-      <div>
-        <NavLink tag={RRNavLink} to='/add'><button className="btn btn-success">ADD Gear</button></NavLink>
+      <div className="main-container">
+        <NavLink tag={RRNavLink} to='/add'><button className="btn btn-outline-dark"><i class="far fa-plus-square fa-3x"></i></button></NavLink>
         <SearchField
             placeholder="Search your gear"
             onChange={ this.onChange }
             searchText=""
-            classNames=""
+            classNames="search-bar"
           />
         <h1>Your Gear</h1>
-        <ul>{gearItemComponents}</ul>
+        <div className="container mt-4 d-flex flex-wrap">{gearItemComponents}</div>
       </div>
     );
   }

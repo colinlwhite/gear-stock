@@ -28,13 +28,17 @@ class GearItem extends React.Component {
   render() {
     const { gearstock } = this.props;
     return (
-      <div>
+      <div className="col-auto mb-3">
+        <div className="card" style={{ width: '18rem' }}>
         <img to='gear/:id' className="gear-item-image" src={gearstock.img} alt="gear card" onClick={this.singleViewEvent} />
-        <h2>{gearstock.name}</h2>
-        <h2>{formatPrice(gearstock.price)}</h2>
-        <h6>{gearstock.condition}</h6>
-        <span><button className="btn btn-danger" onClick={this.deleteEvent}>DELETE</button></span>
-        <span><Button to='edit/:id' className="btn btn-primary" onClick={this.editEvent}>EDIT</Button></span>
+          <h2>{gearstock.name}</h2>
+          <h2>{formatPrice(gearstock.price)}</h2>
+          <h6>{gearstock.condition}</h6>
+          <span>
+          <button to='edit/:id' className="edit btn btn-outline-dark" onClick={this.editEvent}><i class="fas fa-pen fa-2x"></i></button>
+          <button className="delete btn btn-outline-dark" onClick={this.deleteEvent}><i class="fas fa-trash-alt fa-2x"></i></button>
+          </span>
+      </div>
       </div>
     );
   }

@@ -26,7 +26,14 @@ class Overview extends React.Component {
 
   render() {
     const { gear } = this.state;
-    const gearByValue = gear.map(ascendingGear => <ul key={ascendingGear.id}>{ascendingGear.price}</ul>);
+    // const gearByValue = gear.map(ascendingGear => <ul key={ascendingGear.id}>{ascendingGear.price}</ul>);
+
+    const gearByValue = gear.map(ascendingGear => (
+      <div className="ascending-div">
+          <h3 key={ascendingGear.id}>{ascendingGear.name}</h3>
+          <h3>{formatPrice(ascendingGear.price)}</h3>
+      </div>
+    ));
 
     const totalValue = gear.reduce((acc, val) => {
       return val.price ? acc + val.price : acc;
@@ -35,15 +42,41 @@ class Overview extends React.Component {
     const averageGearValue = totalValue / gearCount;
 
     return (
-      <div>
-        <h1>Overview</h1>
-        <h1>{formatPrice(totalValue)}</h1>
-        <h1>{gearCount}</h1>
-        <h1>{formatPrice(averageGearValue)}</h1>
-        <ul>{gearByValue}</ul>
-        <Chart
-        gear={gear}
-        />
+      <div className="container-overview">
+        <h1 className="overview-title">Overview</h1>
+        
+        <div className="row">
+        <div className="total-value-div">
+            <h1 className="">TOTAL VALUE</h1>
+            <h2 className="total-val-num">{formatPrice(totalValue)}</h2>
+        </div>
+
+        <div className="piechart-value-div">
+            <h1 className="">CATEGORY VALUES</h1>
+            <Chart
+            gear={gear}
+            />
+        </div>
+        </div>
+
+        <div className="row">
+        <div className="count-div">
+            <h1 className="">GEAR COUNT</h1>
+            <h2 className="gear-count-num">{gearCount}</h2>
+            <h3>Name</h3>
+        </div>
+
+        <div className="average-price-div">
+            <h1 className="">AVERAGE PRICE</h1>
+            <h2 className="avg-price-num">{formatPrice(averageGearValue)}</h2>
+            <h3>Price</h3>
+        </div>
+        </div>
+        
+        <div className="by-value-div row">
+          <ul>{gearByValue}</ul>
+        </div>
+
       </div>
     );
   }

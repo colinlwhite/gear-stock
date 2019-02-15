@@ -2,6 +2,7 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import gearRequest from '../../helpers/data/gearRequest';
 import authRequests from '../../helpers/data/authRequests';
+import './GearEdit.scss';
 
 class GearEdit extends React.Component {
   state = {
@@ -206,7 +207,7 @@ class GearEdit extends React.Component {
               </Input>
               </div>
 
-        <button className="btn btn-danger">Update Gear</button>
+        <button className="btn btn-outline-dark">SAVE</button>
       </form>
     </div>
     );

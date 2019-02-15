@@ -1,0 +1,54 @@
+.overview-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.container-overview {
+  margin: 0 auto;
+  // margin-top: 0;
+  // margin-bottom: 0;
+  // margin-left: 300px;
+  // margin-right: 300px;
+  color: white;
+}
+
+// .total-value-div {
+//   margin-left: -100px;
+// }
+
+
+.piechart-value-div{
+  padding-left: 175px;
+}
+
+.average-price-div {
+  padding-left: 280px;
+}
+
+.total-val-num {
+  margin-top: 125px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.avg-price-num, .gear-count-num {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.by-value-div {
+  height: 300px;
+  border: 2px solid black;
+  overflow-y: scroll;
+  background-color: silver;
+  border-radius: 25px;
+  border: 4px solid white;
+  color: black;
+}
+
+.ascending-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
