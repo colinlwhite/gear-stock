@@ -26,7 +26,14 @@ class Overview extends React.Component {
 
   render() {
     const { gear } = this.state;
-    const gearByValue = gear.map(ascendingGear => <ul key={ascendingGear.id}>{ascendingGear.price}</ul>);
+    // const gearByValue = gear.map(ascendingGear => <ul key={ascendingGear.id}>{ascendingGear.price}</ul>);
+
+    const gearByValue = gear.map(ascendingGear => (
+      <div className="ascending-div">
+          <h3 key={ascendingGear.id}>{ascendingGear.name}</h3>
+          <h3>{formatPrice(ascendingGear.price)}</h3>
+      </div>
+    ));
 
     const totalValue = gear.reduce((acc, val) => {
       return val.price ? acc + val.price : acc;
@@ -56,15 +63,17 @@ class Overview extends React.Component {
         <div className="count-div">
             <h1 className="">GEAR COUNT</h1>
             <h2 className="gear-count-num">{gearCount}</h2>
+            <h3>Name</h3>
         </div>
 
         <div className="average-price-div">
             <h1 className="">AVERAGE PRICE</h1>
             <h2 className="avg-price-num">{formatPrice(averageGearValue)}</h2>
+            <h3>Price</h3>
         </div>
         </div>
         
-        <div className="by-value-div">
+        <div className="by-value-div row">
           <ul>{gearByValue}</ul>
         </div>
 
