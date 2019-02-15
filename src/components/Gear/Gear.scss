@@ -4,6 +4,7 @@
 
 .flex-wrap {
   justify-content: center;
+  color: black;
 }
 
 .search-bar {
@@ -16,13 +17,3 @@ h1 {
   font-weight: bold;
 }
 
-body {
-  background-image: url(../images/background-image.jpeg);
-  /* height: 100vh; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* position: relative; */
-  height: 100%;
-  // color: white;
-}
