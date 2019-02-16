@@ -35,8 +35,8 @@ class GearItem extends React.Component {
           <h2>{formatPrice(gearstock.price)}</h2>
           <h6>{gearstock.condition}</h6>
           <span>
-          <button to='edit/:id' className="edit btn btn-outline-dark" onClick={this.editEvent}><i class="fas fa-pen fa-2x"></i></button>
-          <button className="delete btn btn-outline-dark" onClick={this.deleteEvent}><i class="fas fa-trash-alt fa-2x"></i></button>
+          <button to='edit/:id' className="edit btn btn-outline-dark" onClick={this.editEvent}><i className="fas fa-pen fa-2x"></i></button>
+          <button className="delete btn btn-outline-dark" onClick={this.deleteEvent}><i className="fas fa-trash-alt fa-2x"></i></button>
           </span>
       </div>
       </div>
