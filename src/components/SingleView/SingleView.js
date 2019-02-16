@@ -1,7 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import gearRequest from '../../helpers/data/gearRequest';
-import formatPrice from '../../helpers/formatPrice';
+import reverb from '../images/reverb.png';
+import ebay from '../images/ebay.png';
+// import formatPrice from '../../helpers/formatPrice';
 import './SingleView.scss';
 
 class SingleView extends React.Component {
@@ -33,6 +35,10 @@ class SingleView extends React.Component {
               <h3>CONDITION: {singleGear.condition}</h3>
               <h3>MODEL: {singleGear.model}</h3>
               <h3>YEAR: {singleGear.year}</h3>
+              <span className="link-buttons">
+                <a href="https://reverb.com/sell/search" target="_blank"><img src={reverb} alt="reverb" className="reverb-button" /></a>
+                <a href="https://www.ebay.com/sl/sell" target="_blank"><img src={ebay} alt="ebay" className="ebay-button" /></a>
+              </span>
             </div>
         </div>
       </div>
