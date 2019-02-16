@@ -20,16 +20,16 @@ class MyNavbar extends React.Component {
     const { isAuthed, logoutClickEvent } = this.props;
     return (
       <div className="my-navbar">
-      <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Gear Stock</NavbarBrand>
+      <Navbar color="black" dark expand="md">
+          <NavbarBrand href="/">GEAR STOCK</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
             <NavItem>
-              { isAuthed ? <NavLink tag={RRNavLink} to='/overview'>Overview</NavLink> : ''}
+              { isAuthed ? <NavLink tag={RRNavLink} to='/overview'>OVERVIEW</NavLink> : ''}
             </NavItem>
               <NavItem>
-                { isAuthed ? <NavLink onClick={logoutClickEvent}>Logout</NavLink> : ''}
+                { isAuthed ? <NavLink onClick={logoutClickEvent}>LOGOUT</NavLink> : ''}
               </NavItem>
             </Nav>
           </Collapse>
