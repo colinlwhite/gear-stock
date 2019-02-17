@@ -30,11 +30,11 @@ class SingleView extends React.Component {
             <img className="single-image-view" src={singleGear.img} alt="gear card"/>
             </div>
             <div className="col">
-              <h3>BRAND: {singleGear.brand}</h3>
+              <h3 className="singleview-h3">BRAND: {singleGear.brand}</h3>
               {/* <h3>EST VAL: {formatPrice(singleGear.price)}</h3> */}
-              <h3>CONDITION: {singleGear.condition}</h3>
-              <h3>MODEL: {singleGear.model}</h3>
-              <h3>YEAR: {singleGear.year}</h3>
+              <h3 className="singleview-h3">CONDITION: {singleGear.condition}</h3>
+              <h3 className="singleview-h3">MODEL: {singleGear.model}</h3>
+              <h3 className="singleview-h3">YEAR: {singleGear.year}</h3>
               <span className="link-buttons">
                 <a href="https://reverb.com/sell/search" target="_blank"><img src={reverb} alt="reverb" className="reverb-button" /></a>
                 <a href="https://www.ebay.com/sl/sell" target="_blank"><img src={ebay} alt="ebay" className="ebay-button" /></a>

@@ -43,16 +43,16 @@ class Overview extends React.Component {
 
     return (
       <div className="container-overview">
-        <h1 className="overview-title">Overview</h1>
+        <h1 className="overview-title">OVERVIEW</h1>
         
         <div className="row">
         <div className="total-value-div">
-            <h1 className="">TOTAL VALUE</h1>
+            <h1 className="cat-label">TOTAL VALUE</h1>
             <h2 className="total-val-num">{formatPrice(totalValue)}</h2>
         </div>
 
         <div className="piechart-value-div">
-            <h1 className="">CATEGORY VALUES</h1>
+            <h1 className="cat-label">CATEGORY VALUES</h1>
             <Chart
             gear={gear}
             />
@@ -61,13 +61,13 @@ class Overview extends React.Component {
 
         <div className="row">
         <div className="count-div">
-            <h1 className="">GEAR COUNT</h1>
+            <h1 className="cat-label">GEAR COUNT</h1>
             <h2 className="gear-count-num">{gearCount}</h2>
             <h3>Name</h3>
         </div>
 
         <div className="average-price-div">
-            <h1 className="">AVERAGE PRICE</h1>
+            <h1 className="cat-label">AVERAGE PRICE</h1>
             <h2 className="avg-price-num">{formatPrice(averageGearValue)}</h2>
             <h3>Price</h3>
         </div>
