@@ -99,7 +99,7 @@ class GearForm extends React.Component {
     return (
       <div className="listing-form col">
       <h1>Add New Gear</h1>
-      <form onSubmit={this.formSubmit}>
+      <form onSubmit={this.formSubmit} autocomplete="off">
 
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -212,7 +212,7 @@ class GearForm extends React.Component {
               </Input>
               </div>
 
-        <button className="btn btn-outline-dark">SAVE</button>
+        <button className="btn btn-light">SAVE</button>
       </form>
     </div>
     );
