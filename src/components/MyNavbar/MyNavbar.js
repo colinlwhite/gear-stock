@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import logo from '../images/logo.png';
 import './MyNavbar.scss';
 
 class MyNavbar extends React.Component {
@@ -21,7 +22,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="my-navbar">
       <Navbar color="black" dark expand="md">
-          <NavbarBrand href="/">GEAR STOCK</NavbarBrand>
+          <NavbarBrand href="/"><img src={logo} alt="Gear Stock" className="logo-image" /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

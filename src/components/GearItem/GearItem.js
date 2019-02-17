@@ -31,8 +31,8 @@ class GearItem extends React.Component {
       <div className="col-auto mb-3">
         <div className="card" style={{ width: '18rem' }}>
         <img to='gear/:id' className="gear-item-image" src={gearstock.img} alt="gear card" onClick={this.singleViewEvent} />
-          <h2>{gearstock.name}</h2>
-          <h2>{formatPrice(gearstock.price)}</h2>
+          <h2 className="card-text">{gearstock.name}</h2>
+          <h2 className="card-text">{formatPrice(gearstock.price)}</h2>
           <h6>{gearstock.condition}</h6>
           <span>
           <button to='edit/:id' className="edit btn btn-outline-dark" onClick={this.editEvent}><i className="fas fa-pen fa-2x"></i></button>
