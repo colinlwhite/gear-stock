@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import gearRequest from '../../helpers/data/gearRequest';
 import reverb from '../images/reverb.png';
 import ebay from '../images/ebay.png';
+import craigslist from '../images/craigslist.png';
 // import formatPrice from '../../helpers/formatPrice';
 import './SingleView.scss';
 
@@ -38,6 +39,7 @@ class SingleView extends React.Component {
               <span className="link-buttons">
                 <a href="https://reverb.com/sell/search" target="_blank"><img src={reverb} alt="reverb" className="reverb-button" /></a>
                 <a href="https://www.ebay.com/sl/sell" target="_blank"><img src={ebay} alt="ebay" className="ebay-button" /></a>
+                <a href="https://post.craigslist.org/k/aJOkRuwy6RG3ihYXbSECmQ/CfeTy?s=type" target="_blank"><img src={craigslist} alt="craigslist" className="craigslist-button" /></a>
               </span>
             </div>
         </div>

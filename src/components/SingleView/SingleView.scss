@@ -11,6 +11,12 @@
 
 .singleview-title {
   margin-bottom: 50px;
+  font-weight: bolder;
+}
+
+.craigslist-button {
+  max-width: 64px;
+  max-height: 64px;
 }
 
 .reverb-button {
@@ -21,6 +27,18 @@
 .ebay-button {
   max-width: 150px;
   max-height: 150px;
+}
+
+.reverb-button:hover {
+  transform: scale(1.5);
+}
+
+.ebay-button:hover {
+  transform: scale(1.5);
+}
+
+.craigslist-button:hover {
+  transform: scale(1.5);
 }
 
 .link-buttons {
