@@ -39,7 +39,7 @@ class GearEdit extends React.Component {
 
   conditionChange = e => this.formFieldStringState('condition', e);
 
-  brandChange = e => this.formFieldStringState('brand', e);
+  manufacturerChange = e => this.formFieldStringState('manufacturer', e);
 
   modelChange = e => this.formFieldStringState('model', e);
 
@@ -110,15 +110,15 @@ class GearEdit extends React.Component {
         </div>
 
         <div className="form-group">
-          <label htmlFor="brand">Brand:</label>
+          <label htmlFor="manufacturer">Manufacturer:</label>
           <input
             type="text"
             className="form-control"
-            id="brand"
-            aria-describedby="gearBrand"
-            placeholder="Brand"
-            value={newGear.brand}
-            onChange={this.brandChange}
+            id="manufacturer"
+            aria-describedby="gearManufacturer"
+            placeholder="Manufacturer"
+            value={newGear.manufacturer}
+            onChange={this.manufacturerChange}
           />
         </div>
 
