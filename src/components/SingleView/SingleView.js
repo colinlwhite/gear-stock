@@ -31,7 +31,7 @@ class SingleView extends React.Component {
             <img className="single-image-view" src={singleGear.img} alt="gear card"/>
             </div>
             <div className="col">
-              <h3 className="singleview-h3">BRAND: {singleGear.brand}</h3>
+              <h3 className="singleview-h3">MANUFACTURER: {singleGear.manufacturer}</h3>
               {/* <h3>EST VAL: {formatPrice(singleGear.price)}</h3> */}
               <h3 className="singleview-h3">CONDITION: {singleGear.condition}</h3>
               <h3 className="singleview-h3">MODEL: {singleGear.model}</h3>
