@@ -14,6 +14,7 @@ const defaultGear = {
   model: '',
   categoryData: '',
   categoryDisplay: '',
+  notes: '',
   uid: '',
 };
 
