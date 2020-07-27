@@ -87,6 +87,8 @@ class GearForm extends React.Component {
 
   yearChange = e => this.formFieldStringState('year', e);
 
+  notesChange = e => this.formFieldStringState('notes', e);
+
 
   formSubmit = (e) => {
     e.preventDefault();
@@ -212,6 +214,24 @@ class GearForm extends React.Component {
                 <option>1930s</option>
               </Input>
               </div>
+
+        <div className="form-group">
+          <label htmlFor="notes">Notes:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="notes"
+            aria-describedby="gearNotes"
+            placeholder="Gear Notes"
+            value={newGear.notes}
+            onChange={this.notesChange}
+          />
+        </div>
+
+        <FormGroup>
+        <Label for="exampleText">Text Area</Label>
+        <Input type="textarea" name="text" id="exampleText" />
+      </FormGroup>
 
         <button className="btn btn-light">SAVE</button>
       </form>
