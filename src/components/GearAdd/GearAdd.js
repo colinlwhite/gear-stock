@@ -228,10 +228,10 @@ class GearForm extends React.Component {
           />
         </div>
 
-        <FormGroup>
+        {/* <FormGroup>
         <Label for="exampleText">Text Area</Label>
         <Input type="textarea" name="text" id="exampleText" />
-      </FormGroup>
+      </FormGroup> */}
 
         <button className="btn btn-light">SAVE</button>
       </form>
