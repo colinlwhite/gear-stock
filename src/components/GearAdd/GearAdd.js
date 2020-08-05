@@ -217,8 +217,9 @@ class GearForm extends React.Component {
 
         <div className="form-group">
           <label htmlFor="notes">Notes:</label>
-          <input
+          <textarea
             type="text"
+            rows="5"
             className="form-control"
             id="notes"
             aria-describedby="gearNotes"
@@ -227,11 +228,6 @@ class GearForm extends React.Component {
             onChange={this.notesChange}
           />
         </div>
-
-        {/* <FormGroup>
-        <Label for="exampleText">Text Area</Label>
-        <Input type="textarea" name="text" id="exampleText" />
-      </FormGroup> */}
 
         <button className="btn btn-light">SAVE</button>
       </form>
