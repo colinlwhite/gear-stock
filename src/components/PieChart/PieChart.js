@@ -1,5 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import './PieChart.scss';
 
 class Chart extends React.Component {
   render() {
@@ -66,6 +67,7 @@ class Chart extends React.Component {
     // const SimplePieChart = React.createClass({
     // render () {
     return (
+      <div className="pie-chart-div">
           <PieChart width={400} height={400} onMouseEnter={this.onPieEnter}>
             <Pie
               data={chartDisplay}
@@ -81,6 +83,7 @@ class Chart extends React.Component {
               }
             </Pie>
           </PieChart>
+      </div>
     );
       // }
    //  })
