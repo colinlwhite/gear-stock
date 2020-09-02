@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
 import './PieChart.scss';
 
 class Chart extends React.Component {
@@ -67,8 +67,9 @@ class Chart extends React.Component {
     // const SimplePieChart = React.createClass({
     // render () {
     return (
-      <div className="pie-chart-div">
-          <PieChart width={400} height={400} onMouseEnter={this.onPieEnter}>
+      <ResponsiveContainer width={700} height="80%" className="keep-working">
+      {/* // <div className="pie-chart-div"> */}
+          <PieChart className="recharts-element" width={400} height={400} onMouseEnter={this.onPieEnter}>
             <Pie
               data={chartDisplay}
               cx={300}
@@ -77,13 +78,15 @@ class Chart extends React.Component {
               label={renderCustomizedLabel}
               outerRadius={80}
               fill="#8884d8"
+              className="pie-itself"
             >
               {
-                chartDisplay.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                chartDisplay.map((entry, index) => <Cell className="cell-element" fill={COLORS[index % COLORS.length]}/>)
               }
             </Pie>
           </PieChart>
-      </div>
+      {/* </div> */}
+      </ResponsiveContainer>
     );
       // }
    //  })
