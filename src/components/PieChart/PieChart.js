@@ -67,7 +67,7 @@ class Chart extends React.Component {
     // const SimplePieChart = React.createClass({
     // render () {
     return (
-      <ResponsiveContainer width={700} height="80%" className="keep-working">
+      <ResponsiveContainer width={700} height="80%" className="keep-working" >
       {/* // <div className="pie-chart-div"> */}
           <PieChart className="recharts-element" width={400} height={400} onMouseEnter={this.onPieEnter}>
             <Pie
