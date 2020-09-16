@@ -5,26 +5,32 @@ import './PieChart.scss';
 class Chart extends React.Component {
   render() {
     const { gear } = this.props;
-    const forTheChart = {};
+    const pieChartNameValueObject = {};
 
     gear.forEach((GearItem) => {
-      if (!forTheChart[GearItem.categoryData]) {
-        forTheChart[GearItem.categoryData] = {
+      if (!pieChartNameValueObject[GearItem.categoryData]) {
+      // if (pieChartNameValueObject[GearItem.categoryData] = false) {
+        pieChartNameValueObject[GearItem.categoryData] = {
           name: GearItem.categoryDisplay,
           value: GearItem.price,
         };
       } else {
-        forTheChart[GearItem.categoryData].value += GearItem.price;
+        pieChartNameValueObject[GearItem.categoryData].value += GearItem.price;
       }
     });
 
     const chartDisplay = [];
 
-    for (const chartItem in forTheChart) {
-      chartDisplay.push(forTheChart[chartItem]);
+    for (const chartItem in pieChartNameValueObject) {
+      chartDisplay.push(pieChartNameValueObject[chartItem]);
     }
 
-    const COLORS = ['#34ace0', '#ff793f', '#b8e994', '#474787', '#f7f1e3', '#218c74', '#b33939', '#ffda79', '#eb2f06', '#3c6382', '#95a5a6', '#fab1a0', '#34495e'];
+    const COLORS = [
+      '#34ace0', '#ff793f', '#b8e994',
+      '#474787', '#f7f1e3', '#218c74',
+      '#b33939', '#ffda79', '#eb2f06',
+      '#3c6382', '#95a5a6', '#fab1a0',
+      '#34495e'];
 
     return (
         <PieChart width={400} height={400}>
