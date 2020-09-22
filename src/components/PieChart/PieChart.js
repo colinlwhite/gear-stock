@@ -1,5 +1,8 @@
 import React from "react";
-import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import {
+  PieChart, Pie, Tooltip, Cell
+} from "recharts";
+import formatPrice from '../../helpers/formatPrice';
 import './PieChart.scss';
 
 class Chart extends React.Component {
@@ -9,10 +12,11 @@ class Chart extends React.Component {
 
     gear.forEach((GearItem) => {
       if (!pieChartNameValueObject[GearItem.categoryData]) {
-      // if (pieChartNameValueObject[GearItem.categoryData] = false) {
         pieChartNameValueObject[GearItem.categoryData] = {
           name: GearItem.categoryDisplay,
           value: GearItem.price,
+          // value: {formatPrice(GearItem.price)},
+          // value: formatPrice(GearItem.price),
         };
       } else {
         pieChartNameValueObject[GearItem.categoryData].value += GearItem.price;
@@ -24,8 +28,8 @@ class Chart extends React.Component {
     for (const chartItem in pieChartNameValueObject) {
       chartDisplay.push(pieChartNameValueObject[chartItem]);
     }
-
-    const COLORS = [
+    console.log(chartDisplay);
+    const pieChartColors = [
       '#34ace0', '#ff793f', '#b8e994',
       '#474787', '#f7f1e3', '#218c74',
       '#b33939', '#ffda79', '#eb2f06',
@@ -43,7 +47,7 @@ class Chart extends React.Component {
             fill="#BEC0C2"
             label>
           {
-            chartDisplay.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+            chartDisplay.map((entry, index) => <Cell fill={pieChartColors[index % pieChartColors.length]}/>)
           }
           </Pie>
           <Tooltip />
