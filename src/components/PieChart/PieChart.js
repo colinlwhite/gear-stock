@@ -28,6 +28,7 @@ class Chart extends React.Component {
     for (const chartItem in pieChartNameValueObject) {
       chartDisplay.push(pieChartNameValueObject[chartItem]);
     }
+    
     console.log(chartDisplay);
     const pieChartColors = [
       '#34ace0', '#ff793f', '#b8e994',
@@ -39,13 +40,11 @@ class Chart extends React.Component {
     return (
         <PieChart width={400} height={400}>
           <Pie
-            isAnimationActive={false}
             data={chartDisplay}
             cx={200}
             cy={200}
             outerRadius={135}
-            fill="#BEC0C2"
-            label>
+            >
           {
             chartDisplay.map((entry, index) => <Cell fill={pieChartColors[index % pieChartColors.length]}/>)
           }
