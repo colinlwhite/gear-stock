@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react';
 import {
-  PieChart, Pie, Tooltip, Cell
-} from "recharts";
-import formatPrice from '../../helpers/formatPrice';
+  PieChart, Pie, Tooltip, Cell,
+} from 'recharts';
 import './PieChart.scss';
 
 class Chart extends React.Component {
@@ -15,8 +14,6 @@ class Chart extends React.Component {
         pieChartNameValueObject[GearItem.categoryData] = {
           name: GearItem.categoryDisplay,
           value: GearItem.price,
-          // value: {formatPrice(GearItem.price)},
-          // value: formatPrice(GearItem.price),
         };
       } else {
         pieChartNameValueObject[GearItem.categoryData].value += GearItem.price;
@@ -27,9 +24,7 @@ class Chart extends React.Component {
 
     for (const chartItem in pieChartNameValueObject) {
       chartDisplay.push(pieChartNameValueObject[chartItem]);
-    }
-    
-    console.log(chartDisplay);
+    }  
     const pieChartColors = [
       '#34ace0', '#ff793f', '#b8e994',
       '#474787', '#f7f1e3', '#218c74',
