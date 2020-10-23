@@ -4,7 +4,6 @@ import gearRequest from '../../helpers/data/gearRequest';
 import reverb from '../images/reverb.png';
 import ebay from '../images/ebay.png';
 import craigslist from '../images/craigslist.png';
-// import formatPrice from '../../helpers/formatPrice';
 import './SingleView.scss';
 
 class SingleView extends React.Component {
@@ -32,7 +31,6 @@ class SingleView extends React.Component {
             </div>
             <div className="col">
               <h3 className="singleview-h3">MANUFACTURER: {singleGear.manufacturer}</h3>
-              {/* <h3>EST VAL: {formatPrice(singleGear.price)}</h3> */}
               <h3 className="singleview-h3">CONDITION: {singleGear.condition}</h3>
               <h3 className="singleview-h3">MODEL: {singleGear.model}</h3>
               <h3 className="singleview-h3">YEAR: {singleGear.year}</h3>
