@@ -97,7 +97,7 @@ class GearEdit extends React.Component {
     return (
       <div className="listing-form col">
         <h1>Edit Gear</h1>
-        <form onSubmit={this.formSubmit} autocomplete="off">  
+        <form onSubmit={this.formSubmit} autocomplete="off">
 
           <Row>
             <Col>
