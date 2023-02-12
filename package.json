@@ -19,7 +19,7 @@
     "react-scripts": "2.1.8",
     "react-search-field": "^1.0.0",
     "reactstrap": "^7.1.0",
-    "recharts": "^1.8.5"
+    "recharts": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
