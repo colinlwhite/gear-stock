@@ -8,7 +8,7 @@
     "bootstrap": "^5.0.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.20.2",
-    "firebase": "^5.11.1",
+    "firebase": "^10.9.0",
     "jquery": "^3.5.1",
     "node-sass": "^7.0.0",
     "npm": "^6.14.18",
